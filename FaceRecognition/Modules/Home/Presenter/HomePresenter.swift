@@ -17,6 +17,11 @@ final class HomePresenter {
 
 // MARK: - HomeViewOutput
 extension HomePresenter: HomeViewOutput {
+    func showCamera() {
+    }
+
+    func showFaceRecognition() {
+    }
 
     func viewDidLoad() {
         view?.configure()

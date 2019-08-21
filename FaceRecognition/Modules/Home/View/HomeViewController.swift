@@ -16,6 +16,8 @@ protocol HomeViewInput: AnyObject {
 // sourcery: AutoMockable
 protocol HomeViewOutput: AnyObject {
     func viewDidLoad()
+    func showCamera()
+    func showFaceRecognition()
 }
 
 final class HomeViewController: UIViewController {
@@ -55,19 +57,48 @@ extension HomeViewController: HomeViewInput {
     }
 }
 
+// MARK: - Config
+extension HomeViewController {
+    enum Row: Int, CaseIterable {
+        case camera
+        case recognize
+
+        var title: String {
+            switch self {
+            case .camera:
+                return "Take pictures for training model"
+            case .recognize:
+                return "Face Recognition"
+            }
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return Row.allCases.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
-        cell.textLabel?.text = "Take picture for training model"
+        let item = Row(rawValue: indexPath.row)
+        cell.textLabel?.text = item?.title
+        cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
-extension HomeViewController: UITableViewDelegate {}
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = Row(rawValue: indexPath.row) else { return }
+        switch item {
+        case .camera:
+            output?.showCamera()
+        case .recognize:
+            output?.showFaceRecognition()
+        }
+    }
+}

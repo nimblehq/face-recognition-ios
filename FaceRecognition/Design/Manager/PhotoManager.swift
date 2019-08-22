@@ -34,6 +34,7 @@ final class PhotoManager {
     private func createAlbumIfNeeded(completion: @escaping ((Bool) -> Void)) {
         if let collection = fetchAssetCollectionForAlbum() {
             assetCollection = collection
+            completion(true)
         } else {
             PHPhotoLibrary.shared().performChanges({
                 PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: PhotoManager.albumName)

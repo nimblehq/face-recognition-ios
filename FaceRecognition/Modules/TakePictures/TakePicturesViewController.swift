@@ -202,14 +202,3 @@ extension TakePicturesViewController {
         cacheRequests = newCacheRequests
     }
 }
-
-extension TakePicturesViewController {
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if error != nil {
-            print(error.debugDescription)
-        } else {
-            print("Saved Image")
-        }
-    }
-}
-

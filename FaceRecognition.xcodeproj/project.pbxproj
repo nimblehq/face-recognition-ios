@@ -3,19 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1938B7E3AC282A9E06E24827 /* Pods_FaceRecognitionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA53D631966FCF7D8CC4F056 /* Pods_FaceRecognitionUITests.framework */; };
+		9000E8BF230E7ADE007E271F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8BE230E7ADE007E271F /* CameraViewController.swift */; };
+		9000E8C2230E833B007E271F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8C1230E833B007E271F /* UIViewController+Alert.swift */; };
+		9000E8C5230E83B9007E271F /* Error+FaceRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8C4230E83B9007E271F /* Error+FaceRecognition.swift */; };
+		9000E8D2230E8881007E271F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8CC230E8881007E271F /* HomeViewController.swift */; };
+		9000E8DC230E88E4007E271F /* TakePicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8D7230E88E4007E271F /* TakePicturesViewController.swift */; };
+		9000E8EC230E982D007E271F /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8EB230E982D007E271F /* PhotoManager.swift */; };
+		9000E8EE230E98B4007E271F /* CGFloat+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8ED230E98B4007E271F /* CGFloat+Math.swift */; };
+		9000E8F0230E98CE007E271F /* CIImage+Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8EF230E98CE007E271F /* CIImage+Vision.swift */; };
 		900F6BC3230CF55C0018D22C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BC2230CF55C0018D22C /* AppDelegate.swift */; };
 		900F6BCA230CF55D0018D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900F6BC9230CF55D0018D22C /* Assets.xcassets */; };
 		900F6BCD230CF55D0018D22C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900F6BCB230CF55D0018D22C /* LaunchScreen.storyboard */; };
-		900F6BFE230CF9130018D22C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BF9230CF9130018D22C /* HomeRouter.swift */; };
-		900F6BFF230CF9130018D22C /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BFA230CF9130018D22C /* HomeModule.swift */; };
-		900F6C00230CF9130018D22C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BFB230CF9130018D22C /* HomeViewController.swift */; };
-		900F6C01230CF9130018D22C /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BFC230CF9130018D22C /* HomeInteractor.swift */; };
-		900F6C02230CF9130018D22C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BFD230CF9130018D22C /* HomePresenter.swift */; };
 		A075AE94CDF6E3B249F23F66 /* Pods_FaceRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E1064DF22785CD4F8D392 /* Pods_FaceRecognition.framework */; };
 		B0BB017E92525A014333288D /* Pods_FaceRecognitionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477E265737A280E217FE5923 /* Pods_FaceRecognitionTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,14 @@
 		5F15704D38DC038E2FC93FF8 /* Pods-FaceRecognitionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognitionTests.debug.xcconfig"; path = "Target Support Files/Pods-FaceRecognitionTests/Pods-FaceRecognitionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6872641C28CE954A36F811E6 /* Pods-FaceRecognitionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognitionUITests.release.xcconfig"; path = "Target Support Files/Pods-FaceRecognitionUITests/Pods-FaceRecognitionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89FAB5FFD0499E3BA7D67DB0 /* Pods-FaceRecognition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognition.debug.xcconfig"; path = "Target Support Files/Pods-FaceRecognition/Pods-FaceRecognition.debug.xcconfig"; sourceTree = "<group>"; };
+		9000E8BE230E7ADE007E271F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		9000E8C1230E833B007E271F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		9000E8C4230E83B9007E271F /* Error+FaceRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+FaceRecognition.swift"; sourceTree = "<group>"; };
+		9000E8CC230E8881007E271F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9000E8D7230E88E4007E271F /* TakePicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePicturesViewController.swift; sourceTree = "<group>"; };
+		9000E8EB230E982D007E271F /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		9000E8ED230E98B4007E271F /* CGFloat+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Math.swift"; sourceTree = "<group>"; };
+		9000E8EF230E98CE007E271F /* CIImage+Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Vision.swift"; sourceTree = "<group>"; };
 		900F6BBF230CF55C0018D22C /* FaceRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		900F6BC2230CF55C0018D22C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		900F6BC9230CF55D0018D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,11 +62,6 @@
 		900F6BD9230CF55D0018D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		900F6BDE230CF55D0018D22C /* FaceRecognitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceRecognitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		900F6BE4230CF55D0018D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		900F6BF9230CF9130018D22C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		900F6BFA230CF9130018D22C /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
-		900F6BFB230CF9130018D22C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		900F6BFC230CF9130018D22C /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		900F6BFD230CF9130018D22C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		976E1064DF22785CD4F8D392 /* Pods_FaceRecognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceRecognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA53D631966FCF7D8CC4F056 /* Pods_FaceRecognitionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceRecognitionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98649B71E1D625262A16B5B /* Pods-FaceRecognitionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognitionTests.release.xcconfig"; path = "Target Support Files/Pods-FaceRecognitionTests/Pods-FaceRecognitionTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +107,6 @@
 				CDC0EBEA2A29ECFADA36A320 /* Pods-FaceRecognitionUITests.debug.xcconfig */,
 				6872641C28CE954A36F811E6 /* Pods-FaceRecognitionUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +118,51 @@
 				BA53D631966FCF7D8CC4F056 /* Pods_FaceRecognitionUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9000E8BC230E7AC5007E271F /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				9000E8EA230E9812007E271F /* Manager */,
+				9000E8C0230E8214007E271F /* Extensions */,
+				9000E8BD230E7AD0007E271F /* View */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		9000E8BD230E7AD0007E271F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9000E8BE230E7ADE007E271F /* CameraViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9000E8C0230E8214007E271F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9000E8C1230E833B007E271F /* UIViewController+Alert.swift */,
+				9000E8C4230E83B9007E271F /* Error+FaceRecognition.swift */,
+				9000E8ED230E98B4007E271F /* CGFloat+Math.swift */,
+				9000E8EF230E98CE007E271F /* CIImage+Vision.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9000E8D4230E88AA007E271F /* TakePictures */ = {
+			isa = PBXGroup;
+			children = (
+				9000E8D7230E88E4007E271F /* TakePicturesViewController.swift */,
+			);
+			path = TakePictures;
+			sourceTree = "<group>";
+		};
+		9000E8EA230E9812007E271F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9000E8EB230E982D007E271F /* PhotoManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		900F6BB6230CF55C0018D22C = {
@@ -141,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				900F6BF6230CF60F0018D22C /* AppDelegate */,
+				9000E8BC230E7AC5007E271F /* Design */,
 				900F6BF7230CF6160018D22C /* Modules */,
 				900F6BF3230CF5EF0018D22C /* Resources */,
 				900F6BF2230CF5E80018D22C /* Supporting Files */,
@@ -191,7 +242,6 @@
 		900F6BF3230CF5EF0018D22C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				900F6BCB230CF55D0018D22C /* LaunchScreen.storyboard */,
 				900F6BF5230CF5FD0018D22C /* LaunchScreen */,
 				900F6BF4230CF5F60018D22C /* Images */,
 			);
@@ -209,6 +259,7 @@
 		900F6BF5230CF5FD0018D22C /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
+				900F6BCB230CF55D0018D22C /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -225,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				900F6BF8230CF6240018D22C /* Home */,
+				9000E8D4230E88AA007E271F /* TakePictures */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -232,45 +284,9 @@
 		900F6BF8230CF6240018D22C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				900F6BFA230CF9130018D22C /* HomeModule.swift */,
-				900F6C06230CF9330018D22C /* View */,
-				900F6C05230CF92E0018D22C /* Router */,
-				900F6C04230CF9220018D22C /* Presenter */,
-				900F6C03230CF91D0018D22C /* Interactor */,
+				9000E8CC230E8881007E271F /* HomeViewController.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		900F6C03230CF91D0018D22C /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				900F6BFC230CF9130018D22C /* HomeInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		900F6C04230CF9220018D22C /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				900F6BFD230CF9130018D22C /* HomePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		900F6C05230CF92E0018D22C /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				900F6BF9230CF9130018D22C /* HomeRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		900F6C06230CF9330018D22C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				900F6BFB230CF9130018D22C /* HomeViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,12 +509,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900F6BFF230CF9130018D22C /* HomeModule.swift in Sources */,
+				9000E8F0230E98CE007E271F /* CIImage+Vision.swift in Sources */,
+				9000E8DC230E88E4007E271F /* TakePicturesViewController.swift in Sources */,
 				900F6BC3230CF55C0018D22C /* AppDelegate.swift in Sources */,
-				900F6BFE230CF9130018D22C /* HomeRouter.swift in Sources */,
-				900F6C02230CF9130018D22C /* HomePresenter.swift in Sources */,
-				900F6C01230CF9130018D22C /* HomeInteractor.swift in Sources */,
-				900F6C00230CF9130018D22C /* HomeViewController.swift in Sources */,
+				9000E8EE230E98B4007E271F /* CGFloat+Math.swift in Sources */,
+				9000E8EC230E982D007E271F /* PhotoManager.swift in Sources */,
+				9000E8BF230E7ADE007E271F /* CameraViewController.swift in Sources */,
+				9000E8D2230E8881007E271F /* HomeViewController.swift in Sources */,
+				9000E8C5230E83B9007E271F /* Error+FaceRecognition.swift in Sources */,
+				9000E8C2230E833B007E271F /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +684,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY4ZX4L4MB;
 				INFOPLIST_FILE = "$(SRCROOT)/FaceRecognition/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,6 +703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YY4ZX4L4MB;
 				INFOPLIST_FILE = "$(SRCROOT)/FaceRecognition/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

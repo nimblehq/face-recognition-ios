@@ -8,36 +8,19 @@
 
 import UIKit
 
-// sourcery: AutoMockable
-protocol HomeViewInput: AnyObject {
-    func configure()
-}
-
-// sourcery: AutoMockable
-protocol HomeViewOutput: AnyObject {
-    func viewDidLoad()
-    func showCamera()
-    func showFaceRecognition()
-}
-
 final class HomeViewController: UIViewController {
 
     let tableView = UITableView()
-    var output: HomeViewOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        output?.viewDidLoad()
+        setUpLayouts()
+        setUpViews()
     }
 }
 
 // MARK: - HomeViewInput
-extension HomeViewController: HomeViewInput {
-    func configure() {
-        setUpLayouts()
-        setUpViews()
-    }
-
+extension HomeViewController {
     private func setUpLayouts() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
@@ -96,9 +79,8 @@ extension HomeViewController: UITableViewDelegate {
         guard let item = Row(rawValue: indexPath.row) else { return }
         switch item {
         case .camera:
-            output?.showCamera()
-        case .recognize:
-            output?.showFaceRecognition()
+            navigationController?.pushViewController(TakePicturesViewController(), animated: true)
+        case .recognize: break
         }
     }
 }

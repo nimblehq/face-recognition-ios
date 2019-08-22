@@ -13,6 +13,9 @@
 		9000E8C5230E83B9007E271F /* Error+FaceRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8C4230E83B9007E271F /* Error+FaceRecognition.swift */; };
 		9000E8D2230E8881007E271F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8CC230E8881007E271F /* HomeViewController.swift */; };
 		9000E8DC230E88E4007E271F /* TakePicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8D7230E88E4007E271F /* TakePicturesViewController.swift */; };
+		9000E8EC230E982D007E271F /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8EB230E982D007E271F /* PhotoManager.swift */; };
+		9000E8EE230E98B4007E271F /* CGFloat+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8ED230E98B4007E271F /* CGFloat+Math.swift */; };
+		9000E8F0230E98CE007E271F /* CIImage+Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E8EF230E98CE007E271F /* CIImage+Vision.swift */; };
 		900F6BC3230CF55C0018D22C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BC2230CF55C0018D22C /* AppDelegate.swift */; };
 		900F6BCA230CF55D0018D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900F6BC9230CF55D0018D22C /* Assets.xcassets */; };
 		900F6BCD230CF55D0018D22C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900F6BCB230CF55D0018D22C /* LaunchScreen.storyboard */; };
@@ -47,6 +50,9 @@
 		9000E8C4230E83B9007E271F /* Error+FaceRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+FaceRecognition.swift"; sourceTree = "<group>"; };
 		9000E8CC230E8881007E271F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9000E8D7230E88E4007E271F /* TakePicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePicturesViewController.swift; sourceTree = "<group>"; };
+		9000E8EB230E982D007E271F /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		9000E8ED230E98B4007E271F /* CGFloat+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Math.swift"; sourceTree = "<group>"; };
+		9000E8EF230E98CE007E271F /* CIImage+Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Vision.swift"; sourceTree = "<group>"; };
 		900F6BBF230CF55C0018D22C /* FaceRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		900F6BC2230CF55C0018D22C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		900F6BC9230CF55D0018D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		9000E8BC230E7AC5007E271F /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				9000E8EA230E9812007E271F /* Manager */,
 				9000E8C0230E8214007E271F /* Extensions */,
 				9000E8BD230E7AD0007E271F /* View */,
 			);
@@ -136,6 +143,8 @@
 			children = (
 				9000E8C1230E833B007E271F /* UIViewController+Alert.swift */,
 				9000E8C4230E83B9007E271F /* Error+FaceRecognition.swift */,
+				9000E8ED230E98B4007E271F /* CGFloat+Math.swift */,
+				9000E8EF230E98CE007E271F /* CIImage+Vision.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +155,14 @@
 				9000E8D7230E88E4007E271F /* TakePicturesViewController.swift */,
 			);
 			path = TakePictures;
+			sourceTree = "<group>";
+		};
+		9000E8EA230E9812007E271F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9000E8EB230E982D007E271F /* PhotoManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		900F6BB6230CF55C0018D22C = {
@@ -492,8 +509,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9000E8F0230E98CE007E271F /* CIImage+Vision.swift in Sources */,
 				9000E8DC230E88E4007E271F /* TakePicturesViewController.swift in Sources */,
 				900F6BC3230CF55C0018D22C /* AppDelegate.swift in Sources */,
+				9000E8EE230E98B4007E271F /* CGFloat+Math.swift in Sources */,
+				9000E8EC230E982D007E271F /* PhotoManager.swift in Sources */,
 				9000E8BF230E7ADE007E271F /* CameraViewController.swift in Sources */,
 				9000E8D2230E8881007E271F /* HomeViewController.swift in Sources */,
 				9000E8C5230E83B9007E271F /* Error+FaceRecognition.swift in Sources */,

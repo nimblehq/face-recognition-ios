@@ -11,6 +11,4 @@ import Foundation
 enum AppError: Error {
     case setUpSession
     case frontCamera
-    case fileManager
-    case photoManager
 }

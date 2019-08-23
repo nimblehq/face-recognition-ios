@@ -8,6 +8,8 @@
 
 import Photos
 
+var count = 0
+
 final class PhotoManager {
     static let albumName = "co.nimblehq.growth.FaceRecognition.album"
     static let shared = PhotoManager()
@@ -57,6 +59,7 @@ final class PhotoManager {
     }
 
     func save(image: UIImage) {
+        if count >= 10 { return }
         authorizationWithHandler { (success) in
             guard success, let collection = self.assetCollection else {
                 fatalError("Error To Save Image")
@@ -73,6 +76,7 @@ final class PhotoManager {
             }, completionHandler: { (success, error) in
                 if success {
                     print("Saved Image")
+                    count += 1
                 } else {
                     fatalError("Unable Save Image")
                 }

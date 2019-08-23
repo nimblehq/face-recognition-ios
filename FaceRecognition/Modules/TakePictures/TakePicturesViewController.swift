@@ -115,7 +115,6 @@ extension TakePicturesViewController {
         return faceRectangleShapeLayer
     }
 
-    // Mark: - Need to understand
     private func updateLayerGeometry() {
         guard let overlayLayer = self.detectionOverlayLayer,
             let rootLayer = self.rootLayer,
@@ -148,8 +147,14 @@ extension TakePicturesViewController {
             scaleX = videoPreviewRect.width / captureDeviceResolution.width
             scaleY = videoPreviewRect.height / captureDeviceResolution.height
         }
+        var scaleXForPosition: CGFloat
+        if position == .back {
+            scaleXForPosition = -scaleX
+        } else {
+            scaleXForPosition = scaleX
+        }
         let affineTransform = CGAffineTransform(rotationAngle: rotation.radians)
-            .scaledBy(x: scaleX, y: -scaleY)
+            .scaledBy(x: scaleXForPosition, y: -scaleY)
         overlayLayer.setAffineTransform(affineTransform)
         let rootLayerBounds = rootLayer.bounds
         overlayLayer.position = CGPoint(x: rootLayerBounds.midX, y: rootLayerBounds.midY)

@@ -12,6 +12,7 @@ import AVKit
 class CameraViewController: UIViewController {
 
     let backButton = UIButton(type: .system)
+    let switchButton = UIButton(type: .system)
 
     // View for showing camera content
     let previewView = UIView(frame: UIScreen.main.bounds)
@@ -20,6 +21,7 @@ class CameraViewController: UIViewController {
     // AVCapture variables
     var session: AVCaptureSession?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    var position: AVCaptureDevice.Position = .front
 
     var videoDataOutput: AVCaptureVideoDataOutput?
     var videoDataOutputQueue: DispatchQueue?
@@ -88,10 +90,32 @@ extension CameraViewController {
             make.size.equalTo(50)
             make.left.top.equalToSuperview().inset(16)
         }
+
+        view.addSubview(switchButton)
+        switchButton.setTitle("Switch Camera", for: .normal)
+        switchButton.addTarget(self, action: #selector(switchCamera), for: .touchUpInside)
+
+        switchButton.snp.makeConstraints { make in
+            make.centerY.equalTo(backButton.snp.centerY)
+            make.left.equalTo(backButton.snp.right).inset(-16)
+        }
     }
 
     @objc private func back() {
         navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func switchCamera() {
+        switch position {
+        case .front:
+            position = .back
+        case .back:
+            position = .front
+        default: return
+        }
+        if let session = self.session {
+            _ = try? setUpCamera(for: session, position: position)
+        }
     }
 }
 
@@ -100,7 +124,7 @@ extension CameraViewController {
     private func setUpAVCaptureSession() -> AVCaptureSession? {
         let session = AVCaptureSession()
         do {
-            let inputDevice = try setUpFrontCamera(for: session)
+            let inputDevice = try setUpCamera(for: session, position: position)
             setUpVideoDataOutput(for: session)
             captureDevice = inputDevice.device
             captureDeviceResolution = inputDevice.resolution
@@ -110,6 +134,28 @@ extension CameraViewController {
             teardownAVCapture()
         }
         return nil
+    }
+
+    private func setUpCamera(for session: AVCaptureSession, position: AVCaptureDevice.Position) throws -> (device: AVCaptureDevice, resolution: CGSize) {
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera],
+                                                                      mediaType: .video,
+                                                                      position: position)
+        guard let device = deviceDiscoverySession.devices.first, let deviceInput = try? AVCaptureDeviceInput(device: device) else {
+            throw AppError.frontCamera
+        }
+        if let input = session.inputs.first {
+            session.removeInput(input)
+        }
+        if session.canAddInput(deviceInput) {
+            session.addInput(deviceInput)
+        }
+        if let highestResolution = highestResolution420Format(for: device) {
+            try device.lockForConfiguration()
+            device.activeFormat = highestResolution.format
+            device.unlockForConfiguration()
+            return (device, highestResolution.resolution)
+        }
+        throw AppError.frontCamera
     }
 
     private func setUpFrontCamera(for session: AVCaptureSession) throws -> (device: AVCaptureDevice, resolution: CGSize) {

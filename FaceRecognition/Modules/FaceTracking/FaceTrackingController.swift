@@ -36,7 +36,6 @@ final class FaceTrackingController: CameraViewController {
     override func loadView() {
         super.loadView()
         view.addSubview(predictLabel)
-        predictLabel.text = "kasjdhakjshk"
         predictLabel.textColor = .white
         predictLabel.backgroundColor = .black
         predictLabel.font = UIFont(name: "CourierNewPSMT", size: 30)
@@ -192,16 +191,11 @@ extension FaceTrackingController {
             else {
                 return
         }
-
         CATransaction.setValue(NSNumber(value: true), forKey: kCATransactionDisableActions)
-
         let videoPreviewRect = previewLayer.layerRectConverted(fromMetadataOutputRect: CGRect(x: 0, y: 0, width: 1, height: 1))
-
         var rotation: CGFloat
         var scaleX: CGFloat
         var scaleY: CGFloat
-
-        // Rotate the layer into screen orientation.
         switch UIDevice.current.orientation {
         case .portraitUpsideDown:
             rotation = 180
@@ -223,13 +217,15 @@ extension FaceTrackingController {
             scaleX = videoPreviewRect.width / captureDeviceResolution.width
             scaleY = videoPreviewRect.height / captureDeviceResolution.height
         }
-
-        // Scale and mirror the image to ensure upright presentation.
+        var scaleXForPosition: CGFloat
+        if position == .back {
+            scaleXForPosition = -scaleX
+        } else {
+            scaleXForPosition = scaleX
+        }
         let affineTransform = CGAffineTransform(rotationAngle: rotation.radians)
-            .scaledBy(x: scaleX, y: -scaleY)
+            .scaledBy(x: scaleXForPosition, y: -scaleY)
         overlayLayer.setAffineTransform(affineTransform)
-
-        // Cover entire screen UI.
         let rootLayerBounds = rootLayer.bounds
         overlayLayer.position = CGPoint(x: rootLayerBounds.midX, y: rootLayerBounds.midY)
     }

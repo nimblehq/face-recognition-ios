@@ -80,7 +80,8 @@ extension HomeViewController: UITableViewDelegate {
         switch item {
         case .camera:
             navigationController?.pushViewController(TakePicturesViewController(), animated: true)
-        case .recognize: break
+        case .recognize:
+            navigationController?.pushViewController(FaceTrackingController(), animated: true)
         }
     }
 }

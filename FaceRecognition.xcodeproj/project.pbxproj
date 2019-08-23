@@ -19,6 +19,9 @@
 		900F6BC3230CF55C0018D22C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F6BC2230CF55C0018D22C /* AppDelegate.swift */; };
 		900F6BCA230CF55D0018D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900F6BC9230CF55D0018D22C /* Assets.xcassets */; };
 		900F6BCD230CF55D0018D22C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900F6BCB230CF55D0018D22C /* LaunchScreen.storyboard */; };
+		909D30CA230F89D600816CD3 /* FaceTrackingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909D30C9230F89D600816CD3 /* FaceTrackingController.swift */; };
+		909D30CC230F8A0200816CD3 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909D30CB230F8A0200816CD3 /* ModelManager.swift */; };
+		909D30CF230F8A2D00816CD3 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 909D30CE230F8A2D00816CD3 /* ImageClassifier.mlmodel */; };
 		A075AE94CDF6E3B249F23F66 /* Pods_FaceRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E1064DF22785CD4F8D392 /* Pods_FaceRecognition.framework */; };
 		B0BB017E92525A014333288D /* Pods_FaceRecognitionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477E265737A280E217FE5923 /* Pods_FaceRecognitionTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +65,9 @@
 		900F6BD9230CF55D0018D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		900F6BDE230CF55D0018D22C /* FaceRecognitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceRecognitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		900F6BE4230CF55D0018D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		909D30C9230F89D600816CD3 /* FaceTrackingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackingController.swift; sourceTree = "<group>"; };
+		909D30CB230F8A0200816CD3 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		909D30CE230F8A2D00816CD3 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		976E1064DF22785CD4F8D392 /* Pods_FaceRecognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceRecognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA53D631966FCF7D8CC4F056 /* Pods_FaceRecognitionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceRecognitionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98649B71E1D625262A16B5B /* Pods-FaceRecognitionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceRecognitionTests.release.xcconfig"; path = "Target Support Files/Pods-FaceRecognitionTests/Pods-FaceRecognitionTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				9000E8EB230E982D007E271F /* PhotoManager.swift */,
+				909D30CB230F8A0200816CD3 /* ModelManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 		900F6BF3230CF5EF0018D22C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				909D30CD230F8A2400816CD3 /* Model */,
 				900F6BF5230CF5FD0018D22C /* LaunchScreen */,
 				900F6BF4230CF5F60018D22C /* Images */,
 			);
@@ -277,6 +285,7 @@
 			children = (
 				900F6BF8230CF6240018D22C /* Home */,
 				9000E8D4230E88AA007E271F /* TakePictures */,
+				909D30C8230F89C000816CD3 /* FaceTracking */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -287,6 +296,22 @@
 				9000E8CC230E8881007E271F /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		909D30C8230F89C000816CD3 /* FaceTracking */ = {
+			isa = PBXGroup;
+			children = (
+				909D30C9230F89D600816CD3 /* FaceTrackingController.swift */,
+			);
+			path = FaceTracking;
+			sourceTree = "<group>";
+		};
+		909D30CD230F8A2400816CD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				909D30CE230F8A2D00816CD3 /* ImageClassifier.mlmodel */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,9 +537,12 @@
 				9000E8F0230E98CE007E271F /* CIImage+Vision.swift in Sources */,
 				9000E8DC230E88E4007E271F /* TakePicturesViewController.swift in Sources */,
 				900F6BC3230CF55C0018D22C /* AppDelegate.swift in Sources */,
+				909D30CA230F89D600816CD3 /* FaceTrackingController.swift in Sources */,
 				9000E8EE230E98B4007E271F /* CGFloat+Math.swift in Sources */,
 				9000E8EC230E982D007E271F /* PhotoManager.swift in Sources */,
 				9000E8BF230E7ADE007E271F /* CameraViewController.swift in Sources */,
+				909D30CF230F8A2D00816CD3 /* ImageClassifier.mlmodel in Sources */,
+				909D30CC230F8A0200816CD3 /* ModelManager.swift in Sources */,
 				9000E8D2230E8881007E271F /* HomeViewController.swift in Sources */,
 				9000E8C5230E83B9007E271F /* Error+FaceRecognition.swift in Sources */,
 				9000E8C2230E833B007E271F /* UIViewController+Alert.swift in Sources */,

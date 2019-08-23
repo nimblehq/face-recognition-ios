@@ -19,14 +19,13 @@ extension CIImage {
     }
 
     func cropped(toFace face: VNFaceObservation) -> CIImage {
-        let percentage: CGFloat = 0.5
         let width = face.boundingBox.width * CGFloat(extent.size.width)
-        let height = face.boundingBox.height * CGFloat(extent.size.height)
+        let tempHeight = face.boundingBox.height * CGFloat(extent.size.height)
+        let height = 4 * tempHeight / 3
         let x = face.boundingBox.origin.x * CGFloat(extent.size.width)
         let y = face.boundingBox.origin.y * CGFloat(extent.size.height)
         let rect = CGRect(x: x, y: y, width: width, height: height)
-        let increasedRect = rect.insetBy(dx: width * -percentage, dy: height * -percentage)
-        return cropped(to: increasedRect)
+        return cropped(to: rect)
     }
 }
 
